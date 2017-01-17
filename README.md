@@ -18,8 +18,8 @@ Since this project was created with the Angular CLI, you need to add a reference
 ```
  "scripts": [
         "../node_modules/ng2-pagination/dist/ng2-pagination-bundle.js"
-      ]
-      ```
+      ]   
+```
 
 ## Code scaffolding
 
