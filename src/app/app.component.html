@@ -1,3 +1,58 @@
-<h1>
-  {{title}}
-</h1>
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+
+      <a class="navbar-brand" href="#">Component Demos</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+<div class="container">
+  <div class="container">
+    <h1>
+      {{title}}
+    </h1>
+
+    <!-- Header -->
+    <div class="row">
+      <div class="col-md-3">
+        <b>Name</b>
+      </div>
+      <div class="col-md-3">
+        <b>Email</b>
+      </div>
+      <div class="col-md-6">
+        <b>Address</b>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div *ngFor="let customer of customers | paginate: { itemsPerPage: 10, currentPage: page }">
+      <div class="row">
+        <div class="col-md-3">
+          {{ customer.name.first}} {{ customer.name.last}}
+        </div>
+        <div class="col-md-3">
+          {{customer.email}}
+        </div>
+        <div class="col-md-6">
+          {{ customer.address}}
+        </div>
+      </div>
+    </div>
+
+    <div class="has-text-centered">
+      <pagination-controls (pageChange)= "page = $event"></pagination-controls>
+    </div>
+    <hr>
+
+    <footer>
+      <p>&copy; 2017 Angular Component Demos </p>
+    </footer>
+  </div> <!-- /container -->
+
