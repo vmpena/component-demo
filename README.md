@@ -13,6 +13,13 @@ The component used to page the incoming data is Michael Bromley's [ng2-paginatio
   changeDetection: ChangeDetectionStrategy.Default
 })
 ```
+## Configuring angular-cli.json 
+Since this project was created with the Angular CLI, you need to add a reference to any third party scripts in the angular-cli.json file. In the case of ng2-pagination, be sure to use ng2-pagination-bundle.js as shown below and not ng2-pagination.js. 
+```
+ "scripts": [
+        "../node_modules/ng2-pagination/dist/ng2-pagination-bundle.js"
+      ]
+      ```
 
 ## Code scaffolding
 
